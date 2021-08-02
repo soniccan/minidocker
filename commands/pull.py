@@ -37,9 +37,8 @@ def _fetch_layer(library: str, image: str, layer_digest: str, token: str) -> Ite
             yield chunk
 
 
-def exec_pull():
-    print(f'pull command called!')
-    return
+def exec_pull(image_name:str):
+
 
     registry, image, tag = fmt.parse_image_opt(image_name)
     print(f'pulling {registry}/{image}:{tag} ...')

@@ -95,7 +95,7 @@ cd /vagrant
 #### 確認 (VM)
 ```shell
 cd /vagrant
-./mini-docker echo hello world
+./mini-docker run echo hello world
 # ---> hello world
 ```
 
@@ -129,7 +129,7 @@ ps
 #### 実装
 - ファイル `commands/run.py`
 - 使用するモジュール `commands.cgroup as cgroup`
-- 使用するクラス `cgroup.Cgroup`
+- 使用するクラス `cgroup.CGroup`
 - 使用する関数
     - `Cgroup.set_cpu_limit(cpu: float)`
     - `Cgroup.add(pid: int)`

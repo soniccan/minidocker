@@ -18,13 +18,23 @@ def images():
 
 
 @click.command()
-def pull():
-    exec_pull()
+@click.argument('image_name',nargs=1)
+def pull(image_name):
+    exec_pull(image_name)
 
 
 @click.command(context_settings={'ignore_unknown_options': True})
-def run():
-    exec_run()
+@click.argument('command',nargs=-1)
+@click.option('--cpu',default=None,type=float)
+def run(cpu,command):
+    
+    #Listは空ならfalseを返す。
+    if not command:
+        print("command need")
+        return
+
+    exec_run(cpu,command)
+    
 
 
 cli.add_command(images)
