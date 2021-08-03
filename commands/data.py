@@ -29,7 +29,7 @@ class Container:
 
     @staticmethod
     def init_from_image(image: Image):
-        id = f'{image.name.replace("/", "-")}_{image.version}_{uuid.uuid4()}'
+        id = f'{image.name.replace("/", "_")}_{image.version}_{uuid.uuid4()}'
         root_dir = os.path.join(cfg.CONTAINER_DATA_DIR, id)
 
         rw_dir = os.path.join(root_dir, 'rw')
